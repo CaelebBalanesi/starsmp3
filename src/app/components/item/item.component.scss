@@ -1,0 +1,30 @@
+.container{
+  font-size: 10px;
+  font-weight: 100;
+  width: 200px;
+  height: 150px;
+}
+
+.image{
+  width: 200px;
+  transform: scaleX(0.9) scaleY(0.9);
+  transition: all 0.2s ;
+}
+
+.image:hover{
+  transform: scaleX(1) scaleY(1);
+}
+
+.link{
+  text-decoration: none;
+  color: black;
+}
+
+.date{
+  float: right;
+}
+
+.description{
+  padding-left: 12px;
+  padding-right: 12px;
+}

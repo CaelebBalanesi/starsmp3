@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="content">
+    <div class="images">
+      <img class="image" *ngFor="let src of images;" [src]="src">
+    </div>
+    <div class="description">
+      <h2 class="title">{{ title }}</h2>
+      <h5 class="date">{{ date }}</h5>
+      <h5 class="price">{{ price }} USD</h5>
+      <app-quantity-selector class="quantity"></app-quantity-selector>
+      <button class="addToCartButton">Add to cart</button>
+      <p class="bio">{{ description }}</p>
+      <!-- Share button -->
+    </div>
+  </div>
+</div>

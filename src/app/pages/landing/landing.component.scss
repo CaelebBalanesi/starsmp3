@@ -1,0 +1,17 @@
+body{
+  overflow: hidden;
+}
+
+.container{
+  width: 100vw;
+  overflow: hidden hidden;
+}
+
+video{
+  transform: translateY(-150px);
+  margin: 0px;
+  width: 100%;
+  overflow: hidden;
+  object-fit: fill;
+  overflow-clip-margin: unset;
+}
