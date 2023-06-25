@@ -1,4 +1,4 @@
-$background: #DDDDE2;
+
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
@@ -33,10 +33,6 @@ $starsmp3-theme: mat.define-light-theme((
 // that you are using.
 @include mat.all-component-themes($starsmp3-theme);
 
-/* You can add global styles to this file, and also import other style files */
-*{
-  margin: 0px;
-}
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Assistant, Roboto, "Helvetica Neue", sans-serif; background-color: $background; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
