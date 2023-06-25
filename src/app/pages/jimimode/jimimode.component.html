@@ -1,3 +1,15 @@
 <div class="container">
-  <button (click)="getItems()">Get Items</button>
+
+  <input #title placeholder="title"/><br>
+  <input #date placeholder="release date"/><br>
+  <input #price placeholder="price"/><br>
+  <input #file type="file" class="file-upload" onchange="console.log(event.target.files)"/><br>
+  <input #description placeholder="description"/><br>
+  <button (click)="uploadNewProduct(
+    title.value,
+    date.value,
+    price.value,
+    description.value,
+    file.files
+  )">Upload New Product</button>
 </div>

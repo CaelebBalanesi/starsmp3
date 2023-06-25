@@ -18,6 +18,7 @@ import { JimimodeComponent } from './pages/jimimode/jimimode.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from 'enviroments/enviroment';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { environment } from 'enviroments/enviroment';
     MatIconModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
+    AngularFireStorageModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
