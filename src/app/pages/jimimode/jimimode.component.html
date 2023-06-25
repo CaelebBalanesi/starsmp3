@@ -1,5 +1,6 @@
 <div class="container">
 
+  <h4>Product Creator</h4>
   <input #title placeholder="title"/><br>
   <input #date placeholder="release date"/><br>
   <input #price placeholder="price"/><br>
@@ -12,4 +13,20 @@
     description.value,
     file.files
   )">Upload New Product</button>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <h4>Post Creator</h4>
+  <input #title2 placeholder="title"/><br>
+  <input #body placeholder="body"/><br>
+  <input #file2 type="file" class="file-upload" onchange="console.log(event.target.files)"/><br>
+  <button (click)="uploadNewPost(
+    title2.value,
+    body.value,
+    file2.files
+  )">Upload New Post</button>
+
+
 </div>

@@ -5,6 +5,7 @@ import { FileUpload } from '../interfaces/file-upload';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 import { Product } from '../interfaces/product';
+import { Post } from '../interfaces/post';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,16 @@ export class ServiceTsService {
     return new Promise<any>((resolve) => {
       this.db.list('products').valueChanges().subscribe(products => resolve(products));
     })
+  }
+
+  getAllPosts(){
+    return new Promise<any>((resolve) => {
+      this.db.list('post').valueChanges().subscribe(posts => resolve(posts));
+    })
+  }
+
+  uploadNewPosts(post: Post){
+    this.db.list('post').push(post);
   }
 
   getFileFromName(name: string){
@@ -57,7 +68,6 @@ export class ServiceTsService {
       ref.limitToLast(numberItems)
     );
   }
-
 
   deleteFile(fileUpload: FileUpload): void {
     this.deleteFileDatabase(fileUpload.key)

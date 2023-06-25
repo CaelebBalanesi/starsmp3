@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FileUpload } from 'src/app/interfaces/file-upload';
 import { ServiceTsService } from 'src/app/services/service.ts.service';
 import { Product } from 'src/app/interfaces/product';
+import { Post } from 'src/app/interfaces/post';
 
 @Component({
   selector: 'app-jimimode',
@@ -29,6 +30,15 @@ export class JimimodeComponent {
     }
     product.files = fileStorage;
     this.service.uploadNewProduct(product);
+  }
+
+  uploadNewPost(title: string, body: string, file: FileList | null){
+    if(file != null && file[0] != null){
+      let fileUpload: FileUpload = new FileUpload(file[0]);
+      this.service.pushFileToStorage(fileUpload);
+      let post: Post = {title: title, body: body, src: file[0].name, date: Date.now() };
+      this.service.uploadNewPosts(post);
+    }
   }
 
   uploadFile(file: FileList | null){

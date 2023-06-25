@@ -12,7 +12,7 @@ export class ItemComponent implements OnInit {
 
   ngOnInit() {
     this.service.getFileFromName(this.files[0])
-      .then(data => this.src = data[0].url);
+      .then(data => this.src = data[0].url)
   }
 
   @Input() title!: string;

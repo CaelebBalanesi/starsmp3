@@ -7,6 +7,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+
 import { CatalogComponent } from './pages/catalog/catalog.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { ItemComponent } from './components/item/item.component';
@@ -19,6 +21,10 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from 'enviroments/enviroment';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { HomeComponent } from './pages/home/home.component';
+import { PostComponent } from './components/post/post.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { StyledDatePipe } from './pipes/styled-date.pipe';
 
 @NgModule({
   declarations: [
@@ -30,13 +36,18 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
     ItemShowcaseComponent,
     QuantitySelectorComponent,
     LandingComponent,
-    JimimodeComponent
+    JimimodeComponent,
+    HomeComponent,
+    PostComponent,
+    ContactComponent,
+    StyledDatePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatIconModule,
+    MatCardModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireStorageModule,
