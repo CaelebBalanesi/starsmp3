@@ -10,5 +10,8 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.1.1"
+  },
+  "scripts": {
+    "build": "ng build --aot --build-optimizer --common-chunk --vendor-chunk --optimization --progress --configuration=production"
   }
 }
