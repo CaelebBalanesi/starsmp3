@@ -3,5 +3,6 @@ export class Product {
   date!: string;
   price!: string;
   description!: string;
-  files!: object;
+  cover!: string;
+  filler!: string[];
 }

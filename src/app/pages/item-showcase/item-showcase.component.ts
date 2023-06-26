@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Product } from 'src/app/interfaces/product';
+import { ServiceTsService } from 'src/app/services/service.ts.service';
 
 @Component({
   selector: 'app-item-showcase',
@@ -9,15 +11,21 @@ import { ActivatedRoute } from '@angular/router';
 export class ItemShowcaseComponent {
 
   itemId!: string;
-  images: string[] = ["assets/camera ambience.png", "assets/camera ambience files.png"];
+  product!: Product;
+  images: string[] = [];
 
-  title: string = "camera ambience";
-  date: string = "5-24-23";
-  price: string = "0.00";
-  description: string = "some ambience/forest sounds recorded by me";
-
-  constructor(private route: ActivatedRoute) {
-    this.route.params.subscribe(params => this.itemId = params["id"])
+  constructor(private route: ActivatedRoute, private service: ServiceTsService) {
+    this.route.params.subscribe(params => {
+      this.itemId = decodeURI(params["id"]);
+      service.getProductFromName(this.itemId)
+        .then(resp => this.product = resp[0])
+        .then(() => {
+          this.product.filler.forEach(obj => {
+            console.log(obj);
+            service.getFileFromName(obj)
+              .then(resp => this.images.push(resp[0].url));
+          })
+        })
+    })
   }
-
 }

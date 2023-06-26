@@ -1,16 +1,17 @@
 <app-navbar></app-navbar>
 <div class="container">
-  <div class="content">
+  <div class="content" *ngIf="product">
     <div class="images">
-      <img class="image" *ngFor="let src of images;" [src]="src">
+      <img class="image" *ngFor="let image of images" [src]="image">
     </div>
     <div class="description">
-      <h2 class="title">{{ title }}</h2>
-      <h5 class="date">{{ date }}</h5>
-      <h5 class="price">{{ price }} USD</h5>
+      <h2 class="title">{{ product.title }}</h2>
+      <h5 class="date">{{ product.date }}</h5>
+      <h5 class="price">{{ product.price }} USD</h5>
       <app-quantity-selector class="quantity"></app-quantity-selector>
       <button class="addToCartButton">Add to cart</button>
-      <p class="bio">{{ description }}</p>
+      <p class="bio">{{ product.description }}</p>
+      <h1>{{ itemId }}</h1>
       <!-- Share button -->
     </div>
   </div>

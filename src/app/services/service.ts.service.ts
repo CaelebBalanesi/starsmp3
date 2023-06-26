@@ -33,8 +33,17 @@ export class ServiceTsService {
   getFileFromName(name: string){
     return new Promise<any>((resolve) => {
       this.db.list('/files', ref =>
-      ref.orderByChild("name").equalTo(name)).valueChanges()
-      .subscribe(url => resolve(url))})
+        ref.orderByChild("name").equalTo(name)).valueChanges()
+          .subscribe(url => resolve(url))
+    })
+  }
+
+  getProductFromName(name: string){
+    return new Promise<any>((resolve) => {
+      this.db.list('/products', ref =>
+        ref.orderByChild("title").equalTo(name)).valueChanges()
+          .subscribe(url => resolve(url))
+    })
   }
 
   pushFileToStorage(fileUpload: FileUpload): Observable<number | undefined>{

@@ -1,11 +1,11 @@
 <div class="container">
-  <a class="link" [href]="'/catalog/' + itemid">
+  <a class="link" [href]="'/catalog/' + product.title">
     <app-image-viewer [src]="src" ></app-image-viewer>
     <p class="description">
-    <span class="title">{{ title }}</span><span class="date">{{ date }}</span>
+    <span class="title">{{ product.title }}</span><span class="date">{{ product.date }}</span>
     </p>
     <p class="description">
-    {{ price }} USD
+    {{ product.price }} USD
     </p>
   </a>
 </div>

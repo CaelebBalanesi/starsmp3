@@ -12,23 +12,27 @@ import { Post } from 'src/app/interfaces/post';
 export class JimimodeComponent {
   constructor(private service: ServiceTsService) {}
 
-  uploadNewProduct(title: string, date: string, price: string, description: string, files: FileList | null){
+  uploadNewProduct(title: string, date: string, price: string, description: string, coverImage: FileList | null, fillerImages: FileList | null){
     let product: Product = {
       title: title,
       date: date,
       price: price,
       description: description,
-      files: {},
+      cover: "",
+      filler: [],
     };
-    let fileStorage: String[] = [];
-    if(files != null){
-      for(var i = 0; i < files?.length; i++){
-        var fileUpload: FileUpload = new FileUpload(files[i]);
-        this.service.pushFileToStorage(fileUpload);
-        fileStorage.push(files[i].name);
-      };
+    if(coverImage != null){
+      this.service.pushFileToStorage(new FileUpload(coverImage[0]));
+      product.cover = coverImage[0].name;
+      var filesBundle = [];
+      if(fillerImages?.length != null){
+        for(var i = 0; i < fillerImages?.length; i++){
+          this.service.pushFileToStorage(new FileUpload(fillerImages[i]));
+          filesBundle.push(fillerImages[i].name);
+        };
+      }
+      product.filler = filesBundle;
     }
-    product.files = fileStorage;
     this.service.uploadNewProduct(product);
   }
 

@@ -4,7 +4,7 @@
     <h1 class="title">Products</h1>
     <app-filter></app-filter>
     <div class="items">
-      <app-item *ngFor="let product of products" [files]="product.files" [title]="product.title" [date]="product.date" [price]="product.price"></app-item>
+      <app-item *ngFor="let product of products" [product]="product"></app-item>
     </div>
   </div>
 </div>
