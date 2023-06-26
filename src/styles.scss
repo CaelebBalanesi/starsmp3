@@ -33,6 +33,11 @@ $starsmp3-theme: mat.define-light-theme((
 // that you are using.
 @include mat.all-component-themes($starsmp3-theme);
 
+@font-face{
+  font-family: DrukWide;
+  src: url(assets/DrukWide-Heavy-Trial.ttf);
+}
+
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: DrukWide, Roboto, "Helvetica Neue", sans-serif; }
