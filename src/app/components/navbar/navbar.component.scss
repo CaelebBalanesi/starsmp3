@@ -1,9 +1,9 @@
-$background: #DDDDE2;
+$background: #dfdfe3;
 
 .container{
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background-color: $background;
   width: 100%;
@@ -13,18 +13,26 @@ $background: #DDDDE2;
 }
 
 .navitem{
-  width: 200px;
+  width: 300px;
+}
+
+.links{
+  padding-left: 24px;
+  white-space: nowrap;
 }
 
 .link{
-  font-size: 10px;
-  color: #888888;
+  font-size: 13px;
   text-decoration: none;
   margin-right: 12px;
+  color: #808080;
+  padding: 6px;
+  transition: all 0.3s;
 }
 
 .link:hover{
-  text-decoration: underline;
+  background-color: #2a2a2a;
+  color: #dfdfe3;
 }
 
 .logo{
@@ -34,10 +42,14 @@ $background: #DDDDE2;
 }
 
 .logoimg{
-  width: 115px;
+  width: 150px;
 }
 
 .icon{
   float: right;
   color: black;
+}
+
+.buttons{
+  margin-right: 24px;
 }

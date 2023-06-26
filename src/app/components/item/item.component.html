@@ -1,6 +1,6 @@
 <div class="container">
   <a class="link" [href]="'/catalog/' + itemid">
-    <img class="image" [src]="src">
+    <app-image-viewer [src]="src" ></app-image-viewer>
     <p class="description">
     <span class="title">{{ title }}</span><span class="date">{{ date }}</span>
     </p>

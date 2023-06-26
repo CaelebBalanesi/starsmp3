@@ -25,6 +25,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { PostComponent } from './components/post/post.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { StyledDatePipe } from './pipes/styled-date.pipe';
+import { ImageViewerComponent } from './components/item/image-viewer/image-viewer.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { StyledDatePipe } from './pipes/styled-date.pipe';
     HomeComponent,
     PostComponent,
     ContactComponent,
-    StyledDatePipe
+    StyledDatePipe,
+    ImageViewerComponent
   ],
   imports: [
     BrowserModule,
