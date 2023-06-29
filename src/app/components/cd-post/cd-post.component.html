@@ -1,0 +1,12 @@
+<mat-card *ngIf="loaded" class="container">
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title class="title">{{ title }}</mat-card-title>
+      <mat-card-subtitle title="subtitle">{{ date | styledDate }}</mat-card-subtitle>
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content class="content">
+    <mat-card-content class="body">{{ body }}</mat-card-content>
+    <img class="image" [src]="link">
+  </mat-card-content>
+</mat-card>
