@@ -12,7 +12,7 @@ import { Post } from 'src/app/interfaces/post';
 export class JimimodeComponent {
   constructor(private service: ServiceTsService) {}
 
-  uploadNewProduct(title: string, date: string, price: string, description: string, coverImage: FileList | null, fillerImages: FileList | null){
+  uploadNewProduct(title: string, date: string, price: string, description: string, coverImage: FileList | null, fillerImages: FileList | null, shopLink: string){
     let product: Product = {
       title: title,
       date: date,
@@ -20,6 +20,7 @@ export class JimimodeComponent {
       description: description,
       cover: "",
       filler: [],
+      shopLink: shopLink,
     };
     if(coverImage != null){
       this.service.pushFileToStorage(new FileUpload(coverImage[0]));

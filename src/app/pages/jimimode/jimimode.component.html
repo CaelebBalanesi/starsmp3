@@ -7,14 +7,16 @@
   <input #file type="file" class="file-upload" onchange="console.log(event.target.files)"/><br>
   <input #files type="file" class="file-upload" onchange="console.log(event.target.files)" multiple/><br>
   <input #description placeholder="description"/><br>
+  <input #shopLink placeholder="stripe link"/><br>
   <button (click)="uploadNewProduct(
     title.value,
     date.value,
     price.value,
     description.value,
     file.files,
-    files.files
-  )">Upload New Product</button>
+    files.files,
+    shopLink.value
+    )">Upload New Product</button>
   <br>
   <br>
   <br>

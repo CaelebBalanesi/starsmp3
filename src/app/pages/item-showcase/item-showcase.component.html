@@ -7,12 +7,13 @@
     <div class="description">
       <h2 class="title">{{ product.title }}</h2>
       <h5 class="date">{{ product.date }}</h5>
+      <img class="main-image" [src]="coverLink">
       <h5 class="price">{{ product.price }} USD</h5>
       <app-quantity-selector class="quantity"></app-quantity-selector>
-      <button class="addToCartButton">Add to cart</button>
+      <a [href]="product.shopLink">
+        <button class="addToCartButton">Buy</button>
+      </a>
       <p class="bio">{{ product.description }}</p>
-      <h1>{{ itemId }}</h1>
-      <!-- Share button -->
     </div>
   </div>
 </div>

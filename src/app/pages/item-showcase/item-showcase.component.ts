@@ -13,6 +13,7 @@ export class ItemShowcaseComponent {
   itemId!: string;
   product!: Product;
   images: string[] = [];
+  coverLink!: string;
 
   constructor(private route: ActivatedRoute, private service: ServiceTsService) {
     this.route.params.subscribe(params => {
@@ -25,6 +26,8 @@ export class ItemShowcaseComponent {
             service.getFileFromName(obj)
               .then(resp => this.images.push(resp[0].url));
           })
+          service.getFileFromName(this.product.cover)
+            .then(resp => this.coverLink = resp[0].url);
         })
     })
   }

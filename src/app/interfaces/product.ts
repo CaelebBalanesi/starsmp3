@@ -5,4 +5,5 @@ export class Product {
   description!: string;
   cover!: string;
   filler!: string[];
+  shopLink!: string;
 }
