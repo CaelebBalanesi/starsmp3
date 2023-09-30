@@ -21,7 +21,6 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from 'enviroments/enviroment';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
-import { HomeComponent } from './pages/home/home.component';
 import { CdPostComponent } from './components/cd-post/cd-post.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { StyledDatePipe } from './pipes/styled-date.pipe';
@@ -38,7 +37,6 @@ import { ImageViewerComponent } from './components/item/image-viewer/image-viewe
     QuantitySelectorComponent,
     LandingComponent,
     JimimodeComponent,
-    HomeComponent,
     CdPostComponent,
     ContactComponent,
     StyledDatePipe,

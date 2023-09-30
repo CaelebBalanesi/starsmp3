@@ -1,9 +1,0 @@
-<app-navbar></app-navbar>
-<div class="container">
-  <div class="content">
-    <h1 class="title">Announcements</h1>
-    <div class="announcements">
-      <app-cd-post class="post" *ngFor="let post of posts" [title]="post.title" [date]="post.date" [body]="post.body" [src]="post.src"></app-cd-post>
-    </div>
-  </div>
-</div>
