@@ -57,4 +57,8 @@ export class JimimodeComponent {
     console.log(this.service.getFiles(10).snapshotChanges());
   }
 
+  test(){
+    this.service.signIn();
+  }
+
 }

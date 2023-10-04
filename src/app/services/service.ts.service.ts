@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database'
 import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { FileUpload } from '../interfaces/file-upload';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
@@ -12,7 +13,21 @@ import { Post } from '../interfaces/post';
 })
 export class ServiceTsService {
 
-  constructor(private db: AngularFireDatabase, private storage: AngularFireStorage) { }
+  constructor(private db: AngularFireDatabase, private storage: AngularFireStorage, private auth: AngularFireAuth) {}
+
+  signIn(){
+    this.auth.signInWithEmailAndPassword("calinux22@gmail.com", "Flip.222")
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user?.uid);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode);
+        console.log(errorMessage);
+      });
+  }
 
   getAllProducts(){
     return new Promise<any>((resolve) => {
